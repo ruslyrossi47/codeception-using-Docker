@@ -1,0 +1,28 @@
+version: '3'
+services:
+  php:
+    build: ./codeception-image
+    volumes:
+      - ./codeception:/codeception
+    container_name: codeception
+    
+
+### Docker CMD
+
+## Build without cache
+# docker-compose build --no-cache
+
+## Stop existing container, build image and start the container
+# docker rm $(docker stop $(docker ps -a -q --filter ancestor=docker-unittest_php --format="{{.ID}}")) && docker-compose build  && docker-compose up -d
+
+## Access the container by name
+# sudo docker exec -i -t codeception /bin/bash
+
+
+## Steps
+
+# 1. php codecept.phar generate:cest acceptance First
+# 2. php codecept.phar run acceptance
+
+## Notes
+# 
