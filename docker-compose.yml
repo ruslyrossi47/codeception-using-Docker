@@ -4,4 +4,5 @@ services:
     build: ./codeception-image
     volumes:
       - ./codeception:/codeception
+      - /dev/shm:/dev/shm
     container_name: codeception
